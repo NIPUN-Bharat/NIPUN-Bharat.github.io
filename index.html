@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NIPUN Bharat — Foundational Literacy & Numeracy</title>
+  <meta name="description" content="A landing page documenting work on the NIPUN Bharat mission for foundational literacy and numeracy in India." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter+Tight:wght@300;400;500;600&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --paper:        #f4ede0;
+      --paper-deep:   #ebe1cc;
+      --ink:          #1c1d1a;
+      --ink-soft:     #3a3b36;
+      --muted:        #6b6a62;
+      --saffron:      #c9620b;
+      --saffron-soft: #e89248;
+      --rule:         rgba(28, 29, 26, 0.14);
+
+      --font-display: "Fraunces", Georgia, serif;
+      --font-body:    "Inter Tight", -apple-system, sans-serif;
+      --font-hindi:   "Tiro Devanagari Hindi", Georgia, serif;
+
+      /* a single shared horizontal gutter so EVERY section's left edge lines up */
+      --gutter: 48px;
+    }
+
+    *,
+    *::before,
+    *::after { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 17px;
+      line-height: 1.6;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+
+      background-image:
+        radial-gradient(rgba(28, 29, 26, 0.025) 1px, transparent 1px),
+        radial-gradient(rgba(28, 29, 26, 0.02) 1px, transparent 1px);
+      background-size: 3px 3px, 7px 7px;
+      background-position: 0 0, 1px 1px;
+    }
+
+    a {
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+    a:hover {
+      color: var(--saffron);
+      border-color: var(--saffron);
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+    }
+
+    @media (max-width: 760px) {
+      :root { --gutter: 28px; }
+    }
+
+    /* ── Top Nav ─────────────────────────────────── */
+    .nav {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px var(--gutter) 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      animation: fade-down 0.9s ease both;
+    }
+    .nav__brand {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+      border: none;
+    }
+    .nav__brand .dot {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      background: var(--saffron);
+      border-radius: 50%;
+      margin-right: 9px;
+      transform: translateY(-2px);
+    }
+    .nav__links {
+      display: flex;
+      gap: 28px;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+    }
+    .nav__links a {
+      border: none;
+      color: var(--ink-soft);
+    }
+
+    /* ── Hero ────────────────────────────────────── */
+    .hero {
+      padding: 90px 0 110px;
+      position: relative;
+    }
+
+    .hero__eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-family: var(--font-body);
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--saffron);
+      margin: 0 0 28px;
+      animation: fade-up 0.9s 0.1s ease both;
+    }
+    .hero__eyebrow .dash {
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--saffron);
+      flex-shrink: 0;
+    }
+
+    .hero__title {
+      font-family: var(--font-display);
+      font-weight: 350;
+      font-size: clamp(44px, 8vw, 104px);
+      line-height: 0.98;
+      letter-spacing: -0.035em;
+      margin: 0 0 36px;
+      color: var(--ink);
+      max-width: 900px;
+      animation: fade-up 1s 0.2s ease both;
+      font-variation-settings: "opsz" 144, "SOFT" 30;
+    }
+    .hero__title em {
+      font-style: italic;
+      font-weight: 350;
+      color: var(--saffron);
+      font-variation-settings: "opsz" 144, "SOFT" 100;
+    }
+
+    .hero__hindi {
+      font-family: var(--font-hindi);
+      font-size: clamp(20px, 2.4vw, 28px);
+      color: var(--ink-soft);
+      line-height: 1.5;
+      max-width: 640px;
+      margin: 0 0 40px;
+      animation: fade-up 1s 0.35s ease both;
+    }
+
+    .hero__lede {
+      font-size: 19px;
+      line-height: 1.55;
+      color: var(--ink-soft);
+      max-width: 580px;
+      margin: 0 0 48px;
+      animation: fade-up 1s 0.45s ease both;
+    }
+
+    .hero__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 26px;
+      background: var(--ink);
+      color: var(--paper);
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 999px;
+      transition: background 0.2s ease, transform 0.2s ease;
+      animation: fade-up 1s 0.6s ease both;
+    }
+    .hero__cta:hover {
+      background: var(--saffron);
+      color: var(--paper);
+      transform: translateY(-2px);
+    }
+    .hero__cta .arrow {
+      display: inline-block;
+      transition: transform 0.25s ease;
+    }
+    .hero__cta:hover .arrow { transform: translateX(4px); }
+
+    .hero__mark {
+      position: absolute;
+      top: 110px;
+      right: var(--gutter);
+      width: 200px;
+      height: 200px;
+      opacity: 0.85;
+      animation: spin 50s linear infinite, fade-in 1.5s 0.7s ease both;
+    }
+    .hero__mark text {
+      font-family: var(--font-display);
+      font-size: 11px;
+      letter-spacing: 0.32em;
+      fill: var(--ink-soft);
+      text-transform: uppercase;
+    }
+    .hero__mark .center {
+      font-family: var(--font-display);
+      font-size: 26px;
+      fill: var(--saffron);
+      font-style: italic;
+    }
+    @media (max-width: 1100px) { .hero__mark { display: none; } }
+
+    /* ── Section divider ───────────────────────── */
+    .divider {
+      border: 0;
+      border-top: 1px solid var(--rule);
+      margin: 0;
+    }
+
+    /* ── About ─────────────────────────────────── */
+    .about {
+      padding: 100px 0;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 64px;
+    }
+    .about__label {
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding-top: 12px;
+    }
+    .about__body { max-width: 720px; }
+    .about__body p {
+      font-family: var(--font-display);
+      font-weight: 350;
+      font-size: clamp(22px, 2.4vw, 30px);
+      line-height: 1.4;
+      letter-spacing: -0.015em;
+      color: var(--ink);
+      margin: 0 0 24px;
+    }
+    .about__body p:last-child { margin-bottom: 0; }
+    .about__body p em {
+      font-style: italic;
+      color: var(--saffron);
+    }
+    @media (max-width: 760px) {
+      .about { grid-template-columns: 1fr; gap: 24px; padding: 72px 0; }
+      .about__label { padding-top: 0; }
+    }
+
+    /* ── Stats ─────────────────────────────────── */
+    .stats {
+      padding: 80px 0;
+      background: var(--paper-deep);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+    .stats__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+    /* numbers align flush with section gutter */
+    .stat {
+      padding: 16px 0;
+      border-right: 1px solid var(--rule);
+      padding-right: 36px;
+    }
+    .stat + .stat { padding-left: 36px; }
+    .stat:last-child { border-right: none; padding-right: 0; }
+    .stat__num {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(52px, 6.5vw, 84px);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: var(--ink);
+      margin-bottom: 14px;
+    }
+    .stat__num sup {
+      font-size: 0.4em;
+      color: var(--saffron);
+      font-weight: 400;
+      vertical-align: top;
+      margin-left: 4px;
+    }
+    .stat__label {
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      color: var(--ink-soft);
+      line-height: 1.5;
+      max-width: 220px;
+    }
+    @media (max-width: 760px) {
+      .stats__grid { grid-template-columns: 1fr; }
+      .stat,
+      .stat + .stat {
+        border-right: none;
+        border-bottom: 1px solid var(--rule);
+        padding: 28px 0;
+      }
+      .stat:last-child { border-bottom: none; }
+    }
+
+    /* ── Pillars ───────────────────────────────── */
+    .pillars { padding: 110px 0; }
+    .pillars__head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 60px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .pillars__title {
+      font-family: var(--font-display);
+      font-weight: 350;
+      font-size: clamp(32px, 4.5vw, 52px);
+      letter-spacing: -0.025em;
+      margin: 0;
+      max-width: 600px;
+      line-height: 1.05;
+    }
+    .pillars__title em { font-style: italic; color: var(--saffron); }
+    .pillars__count {
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .pillars__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
+    }
+    .pillar__num {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 16px;
+      color: var(--saffron);
+      margin-bottom: 18px;
+    }
+    .pillar__name {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 22px;
+      letter-spacing: -0.01em;
+      margin: 0 0 12px;
+      line-height: 1.25;
+    }
+    .pillar__desc {
+      color: var(--ink-soft);
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 0;
+    }
+    @media (max-width: 760px) {
+      .pillars__grid { grid-template-columns: 1fr; gap: 40px; }
+      .pillars { padding: 80px 0; }
+    }
+
+    /* ── Footer ────────────────────────────────── */
+    .footer {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 80px 0 40px;
+    }
+    .footer__top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 56px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid rgba(244, 237, 224, 0.15);
+    }
+    .footer__title {
+      font-family: var(--font-display);
+      font-weight: 350;
+      font-size: clamp(28px, 3.6vw, 44px);
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+      margin: 0;
+      max-width: 460px;
+    }
+    .footer__title em { font-style: italic; color: var(--saffron-soft); }
+    .footer__col h4 {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(244, 237, 224, 0.5);
+      margin: 0 0 16px;
+      font-weight: 500;
+    }
+    .footer__col a {
+      display: block;
+      color: var(--paper);
+      border: none;
+      padding: 5px 0;
+      font-size: 15px;
+    }
+    .footer__col a:hover { color: var(--saffron-soft); }
+    .footer__bottom {
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: rgba(244, 237, 224, 0.55);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    @media (max-width: 760px) {
+      .footer__top { grid-template-columns: 1fr; gap: 36px; }
+    }
+
+    /* ── Animations ────────────────────────────── */
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fade-down {
+      from { opacity: 0; transform: translateY(-12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fade-in {
+      from { opacity: 0; }
+      to   { opacity: 0.85; }
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── NAV ───────────────────────────────────────── -->
+  <header class="nav">
+    <a href="#" class="nav__brand"><span class="dot"></span>NIPUN Bharat</a>
+    <nav class="nav__links">
+      <a href="#about">About</a>
+      <a href="#pillars">Approach</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ── HERO ──────────────────────────────────────── -->
+  <section class="container hero">
+    <div class="hero__eyebrow">
+      <span class="dash"></span>
+      <span>Foundational Literacy &amp; Numeracy</span>
+    </div>
+
+    <h1 class="hero__title">
+      Every child,<br />
+      reading with <em>meaning</em><br />
+      by Grade&nbsp;3.
+    </h1>
+
+    <p class="hero__hindi">
+      हर बच्चा, कक्षा 3 तक, समझ के साथ पढ़ सके — यही हमारा संकल्प है।
+    </p>
+
+    <p class="hero__lede">
+      A field-level account of work on India's national mission for
+      foundational learning — across classrooms, blocks, and the systems
+      that hold them together.
+    </p>
+
+    <a href="#about" class="hero__cta">
+      Read More <span class="arrow">→</span>
+    </a>
+
+    <svg class="hero__mark" viewBox="0 0 220 220" aria-hidden="true">
+      <defs>
+        <path id="circlePath" d="M 110, 110 m -88, 0 a 88,88 0 1,1 176,0 a 88,88 0 1,1 -176,0" />
+      </defs>
+      <circle cx="110" cy="110" r="105" fill="none" stroke="rgba(28,29,26,0.18)" stroke-width="0.5" />
+      <circle cx="110" cy="110" r="88"  fill="none" stroke="rgba(28,29,26,0.22)" stroke-width="0.5" />
+      <text>
+        <textPath href="#circlePath" startOffset="0">
+          ★ FOUNDATIONAL LITERACY ★ FOUNDATIONAL NUMERACY ★
+        </textPath>
+      </text>
+      <text x="110" y="118" text-anchor="middle" class="center">निपुण</text>
+    </svg>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- ── ABOUT ─────────────────────────────────────── -->
+  <section class="container about" id="about">
+    <div class="about__label">— About</div>
+    <div class="about__body">
+      <p>
+        NIPUN Bharat is India's national mission to ensure that every child
+        attains <em>foundational literacy and numeracy</em> by the end of
+        Grade&nbsp;3.
+      </p>
+      <p>
+        This page documents the on-ground work behind that goal — the
+        classrooms visited, the data systems designed, the teachers
+        coached, and the decisions made block by block, district by
+        district.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── STATS ─────────────────────────────────────── -->
+  <section class="stats">
+    <div class="container stats__grid">
+      <div class="stat">
+        <div class="stat__num">75<sup>+</sup></div>
+        <div class="stat__label">Districts engaged across Uttar Pradesh</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num">2K<sup>+</sup></div>
+        <div class="stat__label">Schools supported through assessment &amp; remediation cycles</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num">∞</div>
+        <div class="stat__label">Possibilities, when a child reads with meaning</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PILLARS ───────────────────────────────────── -->
+  <section class="container pillars" id="pillars">
+    <div class="pillars__head">
+      <h2 class="pillars__title">
+        A practitioner's <em>approach</em> to foundational learning.
+      </h2>
+      <span class="pillars__count">Three pillars</span>
+    </div>
+
+    <div class="pillars__grid">
+      <div class="pillar">
+        <div class="pillar__num">01 / Classroom</div>
+        <h3 class="pillar__name">Teaching that meets learners</h3>
+        <p class="pillar__desc">
+          Structured pedagogy, paced lesson plans, and assessment-led
+          remediation that honours where each child actually is.
+        </p>
+      </div>
+      <div class="pillar">
+        <div class="pillar__num">02 / System</div>
+        <h3 class="pillar__name">Government, working alongside</h3>
+        <p class="pillar__desc">
+          Block-level review rhythms, district dashboards, and the slow,
+          patient work of building shared accountability across cadres.
+        </p>
+      </div>
+      <div class="pillar">
+        <div class="pillar__num">03 / Data</div>
+        <h3 class="pillar__name">Evidence in everyone's hands</h3>
+        <p class="pillar__desc">
+          Chatbot-driven assessments, BigQuery pipelines, and dashboards
+          that turn classroom signal into decisions teachers can act on.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ────────────────────────────────────── -->
+  <footer class="footer" id="contact">
+    <div class="container footer__top">
+      <h3 class="footer__title">
+        Building the foundation,<br />
+        one classroom <em>at a time.</em>
+      </h3>
+
+      <div class="footer__col">
+        <h4>Connect</h4>
+        <a href="mailto:hello@example.com">Email</a>
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/NIPUN-Bharat" target="_blank" rel="noopener">GitHub</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Resources</h4>
+        <a href="#">NIPUN Bharat Mission</a>
+        <a href="#">NEP 2020</a>
+        <a href="#">Field Notes</a>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <span>© 2026 — A field record.</span>
+      <span>Built with care, in Lucknow.</span>
+    </div>
+  </footer>
+
+</body>
+</html>
